@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -4485,10 +4485,10 @@ TextureImporter:
       SideScrollerSpritesheet_28: 1758755921
       SideScrollerSpritesheet_23: -1100966158
       SideScrollerSpritesheet_110: 615449239
-      SideScrollerSpritesheet_81: -1634660497
       SideScrollerSpritesheet_139: 378149694
       SideScrollerSpritesheet_98: -861213731
       SideScrollerSpritesheet_116: -2024667867
+      SideScrollerSpritesheet_81: -1634660497
       SideScrollerSpritesheet_32: -1743383889
       SideScrollerSpritesheet_13: -1129213535
       SideScrollerSpritesheet_60: -1734002203
