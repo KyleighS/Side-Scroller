@@ -29,7 +29,9 @@ public class Movement : MonoBehaviour
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + (horizontal * Time.deltaTime * speed);
 
-        if(Input.GetButtonDown("Jump"))
+        isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
             reggiebody.velocity = new Vector2(reggiebody.velocity.x, jumpForce);
         }
