@@ -8,9 +8,14 @@ public class PlayerBehavior : MonoBehaviour
     //can just add emeny health hereor in an enemyBehavior script like:
     //public HealthSystem _playerHealth = new HealthSystem(5,5);
 
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Clothing")
+        {
+            PlayerHeal(1);
+            //Destroy(collision.gameObject);
+            Debug.Log(GameManager.gameManager._playerHealth.Health);
+        }
     }
 
     void Update()
@@ -23,12 +28,9 @@ public class PlayerBehavior : MonoBehaviour
             PlayerTakesDamg(2);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            PlayerHeal(1);
-            Debug.Log(GameManager.gameManager._playerHealth.Health);
-        }
+   
     }
+
 
     private void PlayerTakesDamg(int damg)
     {
