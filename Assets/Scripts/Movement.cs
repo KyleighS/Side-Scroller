@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public Animator animator;
 
+    //for jumping and not being able to jump mid air
     public Rigidbody2D reggiebody;
     public float jumpForce;
 
@@ -14,11 +15,16 @@ public class Movement : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
+    
+    //for respawing from falling
+    private Vector3 respawnPoint;
+    public GameObject fallDetector;
+
 
     void Start()
     {
         reggiebody = GetComponent<Rigidbody2D>();
-
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -34,6 +40,16 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isTouchingGround)
         {
             reggiebody.velocity = new Vector2(reggiebody.velocity.x, jumpForce);
+        }
+
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
         }
     }
 }
