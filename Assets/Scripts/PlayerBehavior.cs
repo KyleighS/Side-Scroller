@@ -13,7 +13,7 @@ public class PlayerBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Clothing")
         {
             PlayerHeal(1);
-            //Destroy(collision.gameObject);
+            Destroy(collision.gameObject);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
     }
