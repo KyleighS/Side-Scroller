@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -11,6 +12,15 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         _healthSlider = GetComponent<Slider>();
+    }
+
+    private void Update()
+    {
+
+        if (_healthSlider.value == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void SetMaxHealth( int maxHealth)

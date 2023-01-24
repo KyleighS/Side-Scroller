@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerBehavior : MonoBehaviour
             PlayerTakesDamg(2);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
-   
+
     }
 
 
