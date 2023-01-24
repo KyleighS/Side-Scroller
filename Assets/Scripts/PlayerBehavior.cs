@@ -7,7 +7,6 @@ public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] HealthBar _healthBar;
     //can just add emeny health hereor in an enemyBehavior script like:
-    //public HealthSystem _playerHealth = new HealthSystem(5,5);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
