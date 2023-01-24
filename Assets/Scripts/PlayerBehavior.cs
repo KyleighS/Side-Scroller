@@ -11,27 +11,21 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //retores some of players health
         if (collision.gameObject.tag == "Clothing")
         {
             PlayerHeal(1);
             Destroy(collision.gameObject);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
-    }
 
-    void Update()
-    {
-        //where to put the damage taken if a player collides with an enemy
-        //and prob where to put heal from itemss
-
-        if(Input.GetKeyDown(KeyCode.C))
+        //player takes damage from enemies
+        if (collision.gameObject.tag == "Enemy")
         {
             PlayerTakesDamg(2);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
-
     }
-
 
     private void PlayerTakesDamg(int damg)
     {

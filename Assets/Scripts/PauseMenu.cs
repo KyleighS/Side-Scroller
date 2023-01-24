@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         //will open and close menu
         menu.SetActive(isPaused);
 
+        //controlling music depending on if the game is paused or not
         //if (isPaused = true)
         if (isPaused)
         {

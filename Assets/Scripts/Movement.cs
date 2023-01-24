@@ -30,11 +30,13 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //walking aand annimations
         animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 
         Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + (horizontal * Time.deltaTime * speed);
 
+        //makes sure the player is touching ground to be able to jump
         isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (Input.GetButtonDown("Jump") && isTouchingGround)
@@ -42,9 +44,11 @@ public class Movement : MonoBehaviour
             reggiebody.velocity = new Vector2(reggiebody.velocity.x, jumpForce);
         }
 
+
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
+    //for checkpoints
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "FallDetector")

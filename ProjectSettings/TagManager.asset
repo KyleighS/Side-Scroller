@@ -7,6 +7,7 @@ TagManager:
   - Clothing
   - FallDetector
   - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX

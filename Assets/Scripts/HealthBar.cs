@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-
+        //if health is 0 then its game over
         if (_healthSlider.value == 0)
         {
             SceneManager.LoadScene("GameOver");

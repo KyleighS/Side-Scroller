@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //allows to have the simer set to differnt decimals
         timeFormats.Add(TimerFormats.Whole, "0");
         timeFormats.Add(TimerFormats.TenthDecimal, "0.0");
         timeFormats.Add(TimerFormats.HundrethDecimal, "0.00");
