@@ -6,9 +6,10 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
     public Transform attackPoint;
-    public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
+    public float attackRange = 0.5f;
+    public int attackDamg = 1;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("we hit " + enemy.name);
+            enemy.GetComponent<Enemies>().TakeDamg(attackDamg);
         }
     }
 

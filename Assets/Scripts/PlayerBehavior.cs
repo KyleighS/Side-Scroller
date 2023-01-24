@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] HealthBar _healthBar;
-    //can just add emeny health hereor in an enemyBehavior script like:
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +20,7 @@ public class PlayerBehavior : MonoBehaviour
         //player takes damage from enemies
         if (collision.gameObject.tag == "Enemy")
         {
-            PlayerTakesDamg(2);
+            PlayerTakesDamg(1);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
     }
