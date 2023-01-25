@@ -8,6 +8,7 @@ TagManager:
   - FallDetector
   - Checkpoint
   - Enemy
+  - Cave
   layers:
   - Default
   - TransparentFX

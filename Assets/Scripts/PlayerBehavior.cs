@@ -23,6 +23,11 @@ public class PlayerBehavior : MonoBehaviour
             PlayerTakesDamg(1);
             Debug.Log(GameManager.gameManager._playerHealth.Health);
         }
+
+        if(collision.gameObject.tag == "Cave")
+        {
+            SceneManager.LoadScene("Victory");
+        }
     }
 
     private void PlayerTakesDamg(int damg)
